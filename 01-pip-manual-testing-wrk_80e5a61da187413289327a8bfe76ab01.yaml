@@ -1,0 +1,633 @@
+type: collection.insomnia.rest/5.0
+name: 01-pip-manual-testing
+meta:
+  id: wrk_80e5a61da187413289327a8bfe76ab01
+  created: 1763074117142
+  modified: 1763074117142
+  description: ""
+collection:
+  - name: 01-pip-manual-testing
+    meta:
+      id: fld_a857716bd74941c7aed0e66b3089f718
+      created: 1763074117147
+      modified: 1763074117147
+      sortKey: -1763074111970
+      description: Manually interact with basic PIP API endpoints
+    children:
+      - url: "{{_['base_url_vm']}}/data-timestamp"
+        name: time-stamp-vm
+        meta:
+          id: req_1afb3a8c78d24ba3993ea862835cf1dd
+          created: 1763074117151
+          modified: 1763074117151
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111969
+        method: GET
+        parameters:
+          - name: version
+            value: 20230626_2017_01_02_TEST
+            disabled: true
+          - name: version
+            value: 20230919_2017_01_02_PROD
+            disabled: true
+          - name: version
+            value: 20230919_2011_02_02_PROD
+            disabled: true
+          - name: version
+            value: 20240326_2017_01_02_PROD
+            disabled: true
+          - name: version
+            value: 20240429_2017_01_02_INT
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/versions"
+        name: versions-vm
+        meta:
+          id: req_3edfa9c14e8b436c9ed14d8d85d07ac4
+          created: 1763074117156
+          modified: 1763074117156
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111968
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/data-signature"
+        name: data-signature-local_server
+        meta:
+          id: req_94c6b2f5c84a4e6eab5d4650e3938596
+          created: 1763074117161
+          modified: 1763074117161
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111967
+        method: GET
+        parameters:
+          - name: version
+            value: 20230626_2017_01_02_TEST
+            disabled: true
+          - name: version
+            value: 20230919_2017_01_02_PROD
+            disabled: true
+          - name: version
+            value: 20230919_2011_02_02_PROD
+            disabled: true
+          - name: version
+            value: 20240627_2017_01_02_PROD
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://wzlxqpip01.worldbank.org/api/v1/data-signature
+        name: QA-data-signature-vm1
+        meta:
+          id: req_07fa858eb81c4ff18c8c5f00b19b7cb5
+          created: 1763074117166
+          modified: 1763074117166
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111966
+        method: GET
+        parameters:
+          - name: version
+            value: 20230626_2017_01_02_TEST
+            disabled: true
+          - name: version
+            value: 20230919_2017_01_02_PROD
+            disabled: true
+          - name: version
+            value: 20230919_2011_02_02_PROD
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://wzlxqpip02.worldbank.org/api/v1/data-signature
+        name: QA-data-signature-vm2
+        meta:
+          id: req_aea6cf07cce144298a89d3917e887be0
+          created: 1763074117171
+          modified: 1763074117171
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111965
+        method: GET
+        parameters:
+          - name: version
+            value: 20230626_2017_01_02_TEST
+            disabled: true
+          - name: version
+            value: 20230919_2017_01_02_PROD
+            disabled: true
+          - name: version
+            value: 20230919_2011_02_02_PROD
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/gh-hash"
+        name: local_server:gh-hash
+        meta:
+          id: req_926996e791ce40079f525699bc4a777a
+          created: 1763074117177
+          modified: 1763074117177
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111964
+        method: GET
+        parameters:
+          - name: version
+            value: 20230626_2017_01_02_TEST
+            disabled: true
+          - name: version
+            value: 20230919_2017_01_02_PROD
+            disabled: true
+          - name: version
+            value: 20230919_2011_02_02_PROD
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://wzlxqpip01.worldbank.org/api/v1/gh-hash
+        name: QA:gh-hash-vm1
+        meta:
+          id: req_3fa89a2acac34b6b9eda6feea17c2cfd
+          created: 1763074117180
+          modified: 1763074117180
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111963
+        method: GET
+        parameters:
+          - name: version
+            value: 20230626_2017_01_02_TEST
+            disabled: true
+          - name: version
+            value: 20230919_2017_01_02_PROD
+            disabled: true
+          - name: version
+            value: 20230919_2011_02_02_PROD
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://wzlxqpip02.worldbank.org/api/v1/gh-hash
+        name: QA:gh-hash-vm2
+        meta:
+          id: req_f03151fa6b4d4e95bbb66c7991dd382a
+          created: 1763074117183
+          modified: 1763074117183
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111962
+        method: GET
+        parameters:
+          - name: version
+            value: 20230626_2017_01_02_TEST
+            disabled: true
+          - name: version
+            value: 20230919_2017_01_02_PROD
+            disabled: true
+          - name: version
+            value: 20230919_2011_02_02_PROD
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/pc-charts"
+        name: pc-charts-vm
+        meta:
+          id: req_c406afec9c5d463a9a27faa0a1ff4e98
+          created: 1763074117185
+          modified: 1763074117185
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111961
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.20"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+          - name: fill_gaps
+            value: "false"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/health-check"
+        name: health-check-gw
+        meta:
+          id: req_e555288d47374b65b5d077de4813635c
+          created: 1763074117188
+          modified: 1763074117188
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111960
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/health-check"
+        name: pip
+        meta:
+          id: req_8a1864e10cad410dbd3712c85b761c81
+          created: 1763074117192
+          modified: 1763074117192
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111959
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/health-check"
+        name: health-check-vm
+        meta:
+          id: req_5dcd7bbf55d84a0b88287d1283cbc38d
+          created: 1763074117195
+          modified: 1763074117195
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111958
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm2']}}/health-check"
+        name: health-check-vm2
+        meta:
+          id: req_2db18b464af640aba8718c4c1a2dfc1a
+          created: 1763074117198
+          modified: 1763074117198
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111957
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm3']}}/health-check"
+        name: health-check-vm3
+        meta:
+          id: req_abda5c901b1b4eb2ae2d87d799de1121
+          created: 1763074117201
+          modified: 1763074117201
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111956
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/hp-stacked"
+        name: hp-stacked-vm
+        meta:
+          id: req_828cf39e7f23471883dba97da52754b8
+          created: 1763074117204
+          modified: 1763074117204
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111955
+        method: GET
+        parameters:
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+          - name: year
+            value: "2019"
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/gh-hash"
+        name: api-version-vm
+        meta:
+          id: req_00f28f1f7f5a4712891700839065c1af
+          created: 1763074117206
+          modified: 1763074117206
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111954
+        method: GET
+        parameters:
+          - name: year
+            value: "2019"
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm2']}}/pc-regional-aggregates"
+        name: pc-regional-aggregates-vm
+        meta:
+          id: req_1189bb521b9b4f3ab2424f25931d224f
+          created: 1763074117209
+          modified: 1763074117209
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111953
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: true
+          - name: year
+            value: 2018, 2022, 2023, 2024
+            disabled: true
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+          - name: year
+            value: "2024"
+            disabled: false
+          - name: country
+            value: LAC
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/pc-regional-aggregates"
+        name: pc-regional-aggregates-gw
+        meta:
+          id: req_7ae405659b574ad9a591699725bf1f79
+          created: 1763074117212
+          modified: 1763074117212
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111952
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_server91']}}/pc-regional-aggregates"
+        name: pc-regional-aggregates-server
+        meta:
+          id: req_46ff22a72bb34fe0933da73426fda67b
+          created: 1763074117215
+          modified: 1763074117215
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111951
+        method: GET
+        parameters:
+          - name: country
+            value: WLD
+            disabled: true
+          - name: year
+            value: 2018, 2019
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: true
+          - name: version
+            value: 20230919_2017_01_02_PROD
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_server']}}/pip-grp"
+        name: pip-grp-server
+        meta:
+          id: req_31e285bd51374f30a9387bd87bbc9914
+          created: 1763074117218
+          modified: 1763074117218
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111950
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: true
+          - name: year
+            value: all
+            disabled: true
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: true
+          - name: version
+            value: "{{testing_version}}"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_server']}}/pc-charts"
+        name: pc-charts-server
+        meta:
+          id: req_0f1f1f1be20940ea9cf1401f41305124
+          created: 1763074117221
+          modified: 1763074117221
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111949
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: true
+          - name: fill_gaps
+            value: "false"
+            disabled: false
+          - name: version
+            value: 20230919_2011_02_02_PROD
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_server91}}/pip"
+        name: pip-local_server
+        meta:
+          id: req_d39e6233e7e9480aa273aaeaa469d5aa
+          created: 1763074117223
+          modified: 1763074117223
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111948
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "15.4"
+            disabled: false
+          - name: fill_gaps
+            value: "TRUE"
+            disabled: false
+          - name: version
+            value: 20220909_2017_01_02_PROD
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_fb8ac35ba0db1544a99db436eb53ae6492c94276
+    created: 1763074117234
+    modified: 1763074117234
+environments:
+  name: Base Environment
+  meta:
+    id: env_fb8ac35ba0db1544a99db436eb53ae6492c94276
+    created: 1763074117227
+    modified: 1763074117227
+    isPrivate: false

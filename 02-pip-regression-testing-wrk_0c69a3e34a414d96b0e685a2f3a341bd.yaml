@@ -1,0 +1,2578 @@
+type: collection.insomnia.rest/5.0
+name: 02-pip-regression-testing
+meta:
+  id: wrk_0c69a3e34a414d96b0e685a2f3a341bd
+  created: 1763074119562
+  modified: 1763074119562
+  description: ""
+collection:
+  - name: 02-pip-regression-testing
+    meta:
+      id: fld_5281e62de67f44e5867a7a8b7a54d37b
+      created: 1763074119566
+      modified: 1763074417720
+      sortKey: -1763074112034
+      description: |-
+        # About this collection
+
+        This collection helps ensure your API continues to work as expected after updates or changes. It contains sample requests for a series of tests that validate different aspects of an API, including:
+
+        1. **Status code verification:** We'll check if the API returns the expected status codes for various requests, ensuring reliability and proper error handling.
+        2. **JSON schema verification:** We'll make sure the JSON response conforms to a specified JSON Schema, ensuring API contracts are honored.
+        3. **Response time verification:** We'll verify that the API's response time is within the acceptable range, providing a smooth user experience and optimizing performance.
+        4. **Response body verification:** We'll validate the structure and content of the response body for accuracy, ensuring the integrity of the data and preventing potential issues downstream.
+        5. **Header verification:** We'll confirm the presence and correct values of specific headers in the response, enabling secure and well-structured communication between your app and its users.
+            
+
+        ## **Using this collection**
+
+        **Step 1:** Send the sample requests and view the response and test results.
+
+        **Step 2:** Replace the sample request URLs with your desired API endpoints.
+
+        **Step 3:** Customize the tests in the "Tests" tab if needed. Don't forget to save your changes.
+
+        **Step 4:** Run the collection by selecting "Run".
+
+        ### Resources
+
+        [Scripting in Postman](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)
+
+        [Test script examples](https://learning.postman.com/docs/writing-scripts/script-references/test-examples/)
+
+        [Postman Sandbox API reference](https://learning.postman.com/docs/sending-requests/grpc/postman-sandbox-api/#writing-assertions)
+
+        [Using the Collection Runner](https://learning.postman.com/docs/collections/running-collections/intro-to-collection-runs/)
+    children:
+      - url: "{{ _.base_url_vm }}/health-check"
+        name: health-check-vm
+        meta:
+          id: req_576d86b0515b4eb09811ac2cbb3234e5
+          created: 1763074119570
+          modified: 1763074411600
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112033
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/health-check"
+        name: health-check-gw
+        meta:
+          id: req_06ef0c1536f74df199d0a95f37d8ddf2
+          created: 1763074119574
+          modified: 1763074119574
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112032
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/data-timestamp"
+        name: data-timestamp-vm
+        meta:
+          id: req_6c152f852b9845579bf9f0aeb4883073
+          created: 1763074119577
+          modified: 1763074119577
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112031
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/data-signature"
+        name: data-signature-vm
+        meta:
+          id: req_eefbd2357eff477e994c668439b6984b
+          created: 1763074119580
+          modified: 1763074119580
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112030
+        method: GET
+        parameters:
+          - name: version
+            value: 20240627_2017_01_02_PROD
+            disabled: true
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm2']}}/data-signature"
+        name: data-signature-vm2
+        meta:
+          id: req_59f5296e24c9461fa6735b814ffe30fb
+          created: 1763074119584
+          modified: 1763074119584
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112029
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm3']}}/data-signature"
+        name: data-signature-vm3
+        meta:
+          id: req_64172f91969847528fa99458589611bd
+          created: 1763074119587
+          modified: 1763074119587
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112028
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/dir-info"
+        name: dir-info-vm
+        meta:
+          id: req_5e6b2ef09eb64a61a684600011012ffe
+          created: 1763074119591
+          modified: 1763074119591
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112027
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/gh-hash"
+        name: gh-hash-vm
+        meta:
+          id: req_d5bbe4c7085b4bb78259b02fc753c1dd
+          created: 1763074119594
+          modified: 1763074119594
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112026
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm2']}}/gh-hash"
+        name: gh-hash-vm2
+        meta:
+          id: req_3193a2caa0e64b4681be994ee12eefea
+          created: 1763074119597
+          modified: 1763074119597
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112025
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm3']}}/gh-hash"
+        name: gh-hash-vm3
+        meta:
+          id: req_8fd873a526b64511b93b1d938f4cef36
+          created: 1763074119603
+          modified: 1763074119603
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112024
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/n-workers"
+        name: n-workers-vm
+        meta:
+          id: req_2baa9b36229641568a82ae6fcadb762d
+          created: 1763074119608
+          modified: 1763074119608
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112023
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/versions"
+        name: versions-gw
+        meta:
+          id: req_05cd7d1938604363bac3232f2d82a939
+          created: 1763074119611
+          modified: 1763074119611
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112022
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/poverty-lines"
+        name: poverty-lines-gw
+        meta:
+          id: req_727c9d10f7144ea599c36a8cac2d6421
+          created: 1763074119613
+          modified: 1763074119613
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112021
+        method: GET
+        parameters:
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/citation"
+        name: citation-gw
+        meta:
+          id: req_1d4e9b586469438abca031ba115cc5ab
+          created: 1763074119616
+          modified: 1763074119616
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112020
+        method: GET
+        parameters:
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+          - name: identity
+            value: PROD
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/citation"
+        name: citation-vm
+        meta:
+          id: req_72d7af29b0094bf5a976952cd80f15ed
+          created: 1763074119619
+          modified: 1763074119619
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112019
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/indicators"
+        name: indicators-gw
+        meta:
+          id: req_cb2dc25631e64fb388ea1727a851b5d2
+          created: 1763074119622
+          modified: 1763074119622
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112018
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/indicators"
+        name: indicators-vm
+        meta:
+          id: req_0c301b6eb06845dd9dcb655478f5a619
+          created: 1763074119626
+          modified: 1763074119626
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112017
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/valid-years"
+        name: valid-years-vm
+        meta:
+          id: req_e0abdc4f5bfc4ab7864f0f9eb0a744fa
+          created: 1763074119629
+          modified: 1763074119629
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112016
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/valid-years"
+        name: valid-years-gw
+        meta:
+          id: req_981d76c2616a49f399e44b1c62d39fad
+          created: 1763074119632
+          modified: 1763074119632
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112015
+        method: GET
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/hp-stacked"
+        name: hp-stacked-gw
+        meta:
+          id: req_8ed4943ced184028bcb7feab69cf3dc6
+          created: 1763074119634
+          modified: 1763074119634
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112014
+        method: GET
+        parameters:
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/hp-stacked"
+        name: hp-stacked-vm
+        meta:
+          id: req_abf57804d24a41aa9ad373541c4ceaa7
+          created: 1763074119637
+          modified: 1763074119637
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112013
+        method: GET
+        parameters:
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/hp-countries"
+        name: hp-countries-gw
+        meta:
+          id: req_d1ab27bae94e4aca918c747a7c39eab9
+          created: 1763074119639
+          modified: 1763074119639
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112012
+        method: GET
+        parameters:
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/ui_aux"
+        name: ui_aux-countries-gw
+        meta:
+          id: req_d4efab766d9e47a198bace8e6d2184b2
+          created: 1763074119641
+          modified: 1763074119641
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112011
+        method: GET
+        parameters:
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+          - name: table
+            value: countries
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/ui_aux"
+        name: ui_aux-countries-vm
+        meta:
+          id: req_53f0d7bbb0ba4617ad4facd638b65f7d
+          created: 1763074119644
+          modified: 1763074119644
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112010
+        method: GET
+        parameters:
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+          - name: table
+            value: countries
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/ui_aux"
+        name: ui_aux-regions-vm
+        meta:
+          id: req_b2a803732dcd4ccfb1f1b987d947b648
+          created: 1763074119647
+          modified: 1763074119647
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112009
+        method: GET
+        parameters:
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+          - name: table
+            value: regions
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/ui_aux"
+        name: ui_aux-cpi-vm
+        meta:
+          id: req_da37886067f44062bc6b2c4579c68eff
+          created: 1763074119649
+          modified: 1763074119649
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112008
+        method: GET
+        parameters:
+          - name: table
+            value: cpi
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/pc-charts"
+        name: pc-charts-gw
+        meta:
+          id: req_60671c5b3a89408ba644322fe7f39756
+          created: 1763074119652
+          modified: 1763074119652
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112007
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+          - name: country
+            value: BDI
+            disabled: true
+        scripts:
+          afterResponse: >
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+
+
+            // Parse the response body as JSON
+
+            var response = insomnia.response.json();
+
+            const keys = Object.keys(response[0]);
+
+            //console.log(keys);
+
+
+            // Define your set of expected values for keys
+
+            const expected_column_names = [
+                "country_code",
+                "reporting_year",
+                "welfare_type",
+                "reporting_level",
+                "median",
+                "gini",
+                "polarization",
+                "mld",
+                "decile1",
+                "decile2",
+                "decile3",
+                "decile4",
+                "decile5",
+                "decile6",
+                "decile7",
+                "decile8",
+                "decile9",
+                "decile10",
+                "region_code",
+                "survey_coverage",
+                "survey_comparability",
+                "comparable_spell",
+                "survey_year",
+                "reporting_pop",
+                "ppp",
+                "cpi",
+                "distribution_type",
+                "is_interpolated",
+                "poverty_line",
+                "mean",
+                "headcount",
+                "poverty_gap",
+                "poverty_severity",
+                "watts",
+                "pop_in_poverty",
+                "spr", 
+                'pg',
+                'estimate_type']
+
+            // Loop through each key in your expected values
+
+            keys.forEach(item => {
+                insomnia.test("Each column name matched expected column names", function() {
+                    insomnia.expect(expected_column_names).to.include(item);
+                });
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/pc-charts"
+        name: pc-charts-vm
+        meta:
+          id: req_c2e2ff83f0084eb48ce82beb8b1ef04a
+          created: 1763074119655
+          modified: 1763074119655
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112006
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: >-
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+
+
+            // Parse the response body as JSON
+
+            var response = insomnia.response.json();
+
+            const keys = Object.keys(response[0]);
+
+            //console.log(keys);
+
+
+            // Define your set of expected values for keys
+
+            const expected_column_names = [
+                "country_code",
+                "reporting_year",
+                "welfare_type",
+                "reporting_level",
+                "median",
+                "gini",
+                "polarization",
+                "mld",
+                "decile1",
+                "decile2",
+                "decile3",
+                "decile4",
+                "decile5",
+                "decile6",
+                "decile7",
+                "decile8",
+                "decile9",
+                "decile10",
+                "region_code",
+                "survey_coverage",
+                "survey_comparability",
+                "comparable_spell",
+                "survey_year",
+                "reporting_pop",
+                "ppp",
+                "cpi",
+                "distribution_type",
+                "is_interpolated",
+                "poverty_line",
+                "mean",
+                "headcount",
+                "poverty_gap",
+                "poverty_severity",
+                "watts",
+                "pop_in_poverty",
+                "spr", 
+                'pg',
+                'estimate_type']
+
+            // Loop through each key in your expected values
+
+            keys.forEach(item => {
+                insomnia.test("Each column name matched expected column names", function() {
+                    insomnia.expect(expected_column_names).to.include(item);
+                });
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/pc-download"
+        name: pc-download-vm
+        meta:
+          id: req_9451d3c096504172b1cb46624c5e02b8
+          created: 1763074119657
+          modified: 1763074119657
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112005
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/pc-regional-aggregates"
+        name: pc-regional-aggregates-gw
+        meta:
+          id: req_1e231b5ccd1841d49b31e69a4a84a5f8
+          created: 1763074119661
+          modified: 1763074119661
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112004
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/pc-regional-aggregates"
+        name: pc-regional-aggregates-vm
+        meta:
+          id: req_a4b0d7e27dd74e22a2d41b30bce2abfe
+          created: 1763074119665
+          modified: 1763074119665
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112003
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/cp-charts"
+        name: cp-charts-gw
+        meta:
+          id: req_6e3c40c7ec094c13ae50f25f5f8d1b49
+          created: 1763074119667
+          modified: 1763074119667
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112002
+        method: GET
+        parameters:
+          - name: povline
+            value: "{{povline}}"
+            disabled: false
+          - name: ppp_version
+            value: "{{ppp_version}}"
+            disabled: false
+          - name: country
+            value: IDN
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/cp-charts"
+        name: cp-charts-vm
+        meta:
+          id: req_cf62421f48ad43aba0f89beac8a4e86c
+          created: 1763074119669
+          modified: 1763074119669
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112001
+        method: GET
+        parameters:
+          - name: povline
+            value: "{{povline}}"
+            disabled: false
+          - name: ppp_version
+            value: "{{ppp_version}}"
+            disabled: false
+          - name: country
+            value: IDN
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/cp-key-indicators"
+        name: cp-key-indicators-vm
+        meta:
+          id: req_e92bdceee58d49a3b0685a8bb39a23d7
+          created: 1763074119670
+          modified: 1763074119670
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074112000
+        method: GET
+        parameters:
+          - name: country
+            value: IDN
+            disabled: false
+          - name: povline
+            value: "{{povline}}"
+            disabled: false
+          - name: ppp_version
+            value: "{{ppp_version}}"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/cp-key-indicators"
+        name: cp-key-indicators-gw
+        meta:
+          id: req_6c4e7c4a27504d8c8dbb2b6c5e30b742
+          created: 1763074119672
+          modified: 1763074119672
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111999
+        method: GET
+        parameters:
+          - name: country
+            value: IDN
+            disabled: false
+          - name: povline
+            value: "{{povline}}"
+            disabled: false
+          - name: ppp_version
+            value: "{{ppp_version}}"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/cp-download"
+        name: cp-download-gw
+        meta:
+          id: req_666bfd1d3a3e4bc5bb0b60358e42f8f4
+          created: 1763074119675
+          modified: 1763074119675
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111998
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/cp-download"
+        name: cp-download-vm
+        meta:
+          id: req_202a8774a2994c49902f76e0ce319469
+          created: 1763074119677
+          modified: 1763074119677
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111997
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/cp-download"
+        name: cp-download-single-vm
+        meta:
+          id: req_898d1d26d08a459db0ce224635ff36ec
+          created: 1763074119678
+          modified: 1763074119678
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111996
+        method: GET
+        parameters:
+          - name: country
+            value: COL
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/survey-metadata"
+        name: survey-metadata-gw
+        meta:
+          id: req_34ccb71a7f174ec188c8c966e1793952
+          created: 1763074119680
+          modified: 1763074119680
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111995
+        method: GET
+        parameters:
+          - name: country
+            value: ALB
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/survey-metadata"
+        name: survey-metadata-vm
+        meta:
+          id: req_75731d16f5ba40d09255bc5fc0d76798
+          created: 1763074119682
+          modified: 1763074119682
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111994
+        method: GET
+        parameters:
+          - name: country
+            value: ALB
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/pip"
+        name: pip-gw
+        meta:
+          id: req_a17e800cd9ee4e7e9d84e5f1eab62c0b
+          created: 1763074119683
+          modified: 1763074119683
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111993
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "FALSE"
+            disabled: false
+          - name: country
+            value: BDI
+            disabled: true
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/pip"
+        name: pip-multiselect-country-gw
+        meta:
+          id: req_b21a92dfa8e0432fa4f7a5a231f0b7c6
+          created: 1763074119685
+          modified: 1763074119685
+          isPrivate: false
+          description: Some intensive requests are being forked to parallel processes to
+            avoid blocking the API. The checks conducted to assess the
+            "intensive" character of the request have created problems in the
+            past. This is to make sure it works has expected
+          sortKey: -1763074111992
+        method: GET
+        parameters:
+          - name: country
+            value: CHN,IND
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "FALSE"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/pip"
+        name: pip-multiselect-year-gw
+        meta:
+          id: req_00fbeb05f96d4fe9bdf2b8ad90502c03
+          created: 1763074119687
+          modified: 1763074119687
+          isPrivate: false
+          description: Some intensive requests are being forked to parallel processes to
+            avoid blocking the API. The checks conducted to assess the
+            "intensive" character of the request have created problems in the
+            past. This is to make sure it works has expected
+          sortKey: -1763074111991
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: 2010,2012
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "FALSE"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/pip"
+        name: pip-multiselect-year-vm
+        meta:
+          id: req_c2f7abdcbf9a444197d945f3dae27ef8
+          created: 1763074119688
+          modified: 1763074119688
+          isPrivate: false
+          description: Some intensive requests are being forked to parallel processes to
+            avoid blocking the API. The checks conducted to assess the
+            "intensive" character of the request have created problems in the
+            past. This is to make sure it works has expected
+          sortKey: -1763074111990
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: 2010,2012
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "FALSE"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/pip"
+        name: pip-csv-gw
+        meta:
+          id: req_884f29a3048c4c9388fedcd667e7ef19
+          created: 1763074119691
+          modified: 1763074119691
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111989
+        method: GET
+        parameters:
+          - name: country
+            value: AGO
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "TRUE"
+            disabled: false
+          - name: format
+            value: csv
+            disabled: false
+        scripts:
+          afterResponse: |
+            function csvToArray(csvString) {
+                var lines = csvString.trim().split("\n");
+                var headers = lines[0].split(",");
+                var result = [];
+                for (var i = 1; i < lines.length; i++) {
+                    var obj = {};
+                    var currentLine = lines[i].split(",");
+                    for (var j = 0; j < headers.length; j++) {
+                        obj[headers[j].trim()] = currentLine[j].trim();
+                    }
+                    result.push(obj);
+                }
+                return result;
+            }
+
+
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+
+            var csvData = csvToArray(insomnia.response.text());
+
+            insomnia.test("Field is empty string", function () {
+                insomnia.expect(csvData[0].decile1).to.eql("");
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/pip"
+        name: pip-rds-gw
+        meta:
+          id: req_edb1786aaea8444fb8ef7f4e7fb56699
+          created: 1763074119693
+          modified: 1763074119693
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111988
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "FALSE"
+            disabled: false
+          - name: format
+            value: rds
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/pip"
+        name: pip-arrow-gw
+        meta:
+          id: req_a1a9805dbbd54ff7abc94180714c7d32
+          created: 1763074119695
+          modified: 1763074119695
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111987
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "FALSE"
+            disabled: false
+          - name: format
+            value: arrow
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/pip"
+        name: pip-vm
+        meta:
+          id: req_21429b069a5a4c91a0d5c680bdc0ba61
+          created: 1763074119696
+          modified: 1763074119696
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111986
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "FALSE"
+            disabled: false
+          - name: version
+            value: 20240429_2017_01_02_INT
+            disabled: true
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_gateway}}/pip"
+        name: pip-fill-gaps-gw
+        meta:
+          id: req_54ebe6bd7f5347bd9521cd10b0bf6819
+          created: 1763074119698
+          modified: 1763074119698
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111985
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "TRUE"
+            disabled: false
+          - name: version
+            value: 20240429_2017_01_02_INT
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/pip"
+        name: pip-fill-gaps-vm
+        meta:
+          id: req_a0f055adf6de443989673717ce188c62
+          created: 1763074119699
+          modified: 1763074119699
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111984
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: reporting_level
+            value: all
+            disabled: false
+          - name: fill_gaps
+            value: "TRUE"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/pip-grp"
+        name: pip-grp-gw
+        meta:
+          id: req_03056ec0af5a41e599767405d831c948
+          created: 1763074119701
+          modified: 1763074119701
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111983
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/pip-grp"
+        name: pip-grp-ALL-gw
+        meta:
+          id: req_255357c7f6774955a2081692ff1a2563
+          created: 1763074119702
+          modified: 1763074119702
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111982
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: "2010"
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: >
+            // Parse the JSON response
+
+            let jsonData = insomnia.response.json();
+
+
+            // Predefined set of values
+
+            let validValues = ["SSA", "ECA", "OHI", "LAC", "SAS", "MNA", "EAP",
+            "WLD", "AFE", "AFW"]; // Replace with your valid values
+
+
+            // Assuming the response is an array of objects and you want to
+            check the key 'yourKey'
+
+            jsonData.forEach(item => {
+                insomnia.test("Value is within predefined set", function() {
+                    insomnia.expect(validValues).to.include(item.region_code);
+                });
+            });
+
+
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/pip-grp"
+        name: pip-grp-WLD-gw
+        meta:
+          id: req_7e972d66d9a34e2ca40e8f24c770e268
+          created: 1763074119704
+          modified: 1763074119704
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111981
+        method: GET
+        parameters:
+          - name: country
+            value: WLD
+            disabled: false
+          - name: year
+            value: "2010"
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: >
+            // Parse the JSON response
+
+            let jsonData = insomnia.response.json();
+
+
+            // Predefined set of values
+
+            let validValues = ["WLD"]; // Replace with your valid values
+
+
+            // Assuming the response is an array of objects and you want to
+            check the key 'yourKey'
+
+            jsonData.forEach(item => {
+                insomnia.test("Value is within predefined set", function() {
+                    insomnia.expect(validValues).to.include(item.region_code);
+                });
+            });
+
+
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_gateway']}}/pip-grp"
+        name: pip-grp-MIX-gw
+        meta:
+          id: req_fcf6c65ce2d443bca58087c4aad633a9
+          created: 1763074119706
+          modified: 1763074119706
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111980
+        method: GET
+        parameters:
+          - name: country
+            value: WLD,AFW,LAC
+            disabled: false
+          - name: year
+            value: "2010"
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: >
+            // Parse the JSON response
+
+            let jsonData = insomnia.response.json();
+
+
+            // Predefined set of values
+
+            let validValues = ["WLD", "AFW", "LAC"]; // Replace with your valid
+            values
+
+
+            // Assuming the response is an array of objects and you want to
+            check the key 'yourKey'
+
+            jsonData.forEach(item => {
+                insomnia.test("Value is within predefined set", function() {
+                    insomnia.expect(validValues).to.include(item.region_code);
+                });
+            });
+
+
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/pip-grp"
+        name: pip-grp-vm
+        meta:
+          id: req_7cae59c10a2f4472abc62c1fd3d80977
+          created: 1763074119708
+          modified: 1763074119708
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111979
+        method: GET
+        parameters:
+          - name: country
+            value: all
+            disabled: false
+          - name: year
+            value: all
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: ppp_version
+            value: "2017"
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/pip"
+        name: VINTAGE 20220909_2017_01_02_PROD - pip-vm
+        meta:
+          id: req_1fabaf743cff431e9dd8d9df03cb00c9
+          created: 1763074119709
+          modified: 1763074119709
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111978
+        method: GET
+        parameters:
+          - name: country
+            value: ALB
+            disabled: false
+          - name: year
+            value: "2018"
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: fill_gaps
+            value: "false"
+            disabled: false
+          - name: additional_ind
+            value: "false"
+            disabled: false
+          - name: version
+            value: 20220909_2017_01_02_PROD
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/pip"
+        name: VINTAGE 20220909_2011_02_02_PROD - pip-vm
+        meta:
+          id: req_993538c6c33146f5adfa9a76f4483da6
+          created: 1763074119711
+          modified: 1763074119711
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111977
+        method: GET
+        parameters:
+          - name: country
+            value: ALB
+            disabled: false
+          - name: year
+            value: "2018"
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: fill_gaps
+            value: "false"
+            disabled: false
+          - name: additional_ind
+            value: "false"
+            disabled: false
+          - name: version
+            value: 20220909_2011_02_02_PROD
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url_vm}}/pip"
+        name: VINTAGE 20230328_2017_01_02_PROD - pip-vm
+        meta:
+          id: req_78e877d5e49e45548f8915d131067c9f
+          created: 1763074119712
+          modified: 1763074119712
+          isPrivate: false
+          description: >-
+            The test on this request asserts that the reponse has a "200 OK"
+            status.
+
+
+            You can check for any HTTP status code using the same mechanism, for
+            example `pm.response.to.have.status(403)` if your API should return
+            an "Unauthorized" response.
+          sortKey: -1763074111976
+        method: GET
+        parameters:
+          - name: country
+            value: ALB
+            disabled: false
+          - name: year
+            value: "2018"
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: fill_gaps
+            value: "false"
+            disabled: false
+          - name: additional_ind
+            value: "false"
+            disabled: false
+          - name: version
+            value: 20230328_2017_01_02_PROD
+            disabled: false
+        scripts:
+          afterResponse: |
+            insomnia.test("Status code is 200", function () {
+                insomnia.response.to.have.status(200);
+            });
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/grouped-stats"
+        name: grouped-stats-vm
+        meta:
+          id: req_b25949cea930405e8e5bd3b71c6d3dfe
+          created: 1763074119714
+          modified: 1763074119714
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111975
+        method: GET
+        parameters:
+          - name: cum_population
+            value: "{{cum_population}}"
+            disabled: false
+          - name: requested_mean
+            value: "2.911786"
+            disabled: false
+          - name: povline
+            value: "2.15"
+            disabled: false
+          - name: format
+            value: csv
+            disabled: false
+          - name: cum_welfare
+            value: "{{cum_welfare}}"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/lorenz-curve"
+        name: lorenz-curve-vm
+        meta:
+          id: req_def9b0446ceb4c28b60b843b3273177c
+          created: 1763074119715
+          modified: 1763074119715
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111974
+        method: GET
+        parameters:
+          - name: cum_welfare
+            value: "{{cum_welfare}}"
+            disabled: false
+          - name: cum_population
+            value: "{{cum_population}}"
+            disabled: false
+          - name: format
+            value: csv
+            disabled: false
+          - name: n_bins
+            value: "20"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/regression-params"
+        name: regression-params-vm
+        meta:
+          id: req_80eab39cb6064df893d04f887d034408
+          created: 1763074119717
+          modified: 1763074119717
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111973
+        method: GET
+        parameters:
+          - name: cum_welfare
+            value: "{{cum_welfare}}"
+            disabled: false
+          - name: cum_population
+            value: "{{cum_population}}"
+            disabled: false
+          - name: format
+            value: csv
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/pkgs-version"
+        name: pkgs-version
+        meta:
+          id: req_8afdaa338c524fdaa17203353e939b9e
+          created: 1763074119719
+          modified: 1763074119719
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111972
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{_['base_url_vm']}}/wld-lineup-year"
+        name: wld-lineup-year
+        meta:
+          id: req_6c684aa243a640728393363599adc746
+          created: 1763074119720
+          modified: 1763074119720
+          isPrivate: false
+          description: ""
+          sortKey: -1763074111971
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      baseUrl: https://postman-echo.com
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b213cb05a9572817a0f77ff8ec44995252e34a55
+    created: 1763074119729
+    modified: 1763074417705
+environments:
+  name: Base Environment
+  meta:
+    id: env_b213cb05a9572817a0f77ff8ec44995252e34a55
+    created: 1763074119723
+    modified: 1763074417712
+    isPrivate: false

@@ -1,0 +1,22 @@
+type: environment.insomnia.rest/5.0
+name: 03-PROD
+meta:
+  id: wrk_3d488e1ba2b34850a5b3767b22e9bbe7
+  created: 1763074162216
+  modified: 1763074162216
+  description: ""
+environments:
+  name: 03-PROD
+  meta:
+    id: env_279dc96e2de1401cbf17c5f3f0e9bc91
+    created: 1763074162221
+    modified: 1763074417716
+    isPrivate: false
+  data:
+    base_url_vm: http://wzlxppip01.worldbank.org/api/v1
+    base_url_vm2: http://wzlxppip02.worldbank.org/api/v1
+    base_url_vm3: http://wzlxppip03.worldbank.org/api/v1
+    base_url_gateway: https://api.worldbank.org/pip/v1
+    ppp_version: "2021"
+    base_version: ""
+    povline: "3"
